@@ -22,23 +22,24 @@ const Register = () => {
   }
 
   return (
-    <div className='formContainer'>
-      <div className='formWrapper'>
-        <span className='logo'>Lonely Chat</span>
-        <span className='title'>Register</span>
-        <form onSubmit={handleSubmit}>
-          <input type="text" placeholder='display name'/>
-          <input type="email" placeholder='email'/>
-          <input type="password" placeholder='password'/>
-          <input style={{display:"none"}}type="file" id='file'/>
-          <label htmlFor='file'> 
-            <img src={Add} alt='Add avatar'></img>
-            <span>Add an avatar</span>
-          </label>
-          <button>Sign up</button>
-          {err && <span>Something went wrong</span>}
-        </form>
-        <p>You already have an account? Login</p>
+    <div className="popup">
+      <h1 className="h1">Lonely Chat</h1>
+      <h2 className="h2">Register</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="name"/>
+        <input type="email" placeholder="email"/>
+        <input type="password" placeholder="password"/>
+        <input style={{display:"none"}}type="file" id='file'/>
+        <label className="popup-addImage" htmlFor='file'> 
+          <img className="popup-addImage-image" src={Add} alt='Add avatar'/>
+          <span>Add an avatar</span>
+        </label>
+        <input className="popup-submit" type="submit" value="Sign up"/>
+        {err && <span>Something went wrong</span>}
+      </form>
+      <div className="popup-hint">
+        <p>You already have an account?</p>
+        <a href="#">Login</a>
       </div>
     </div>
   )
